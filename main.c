@@ -9,7 +9,7 @@ int	main(void)
 	env = malloc(sizeof(t_env));
 	if (env == 0)
 		return (0);
-	init(env);
-	(void) env;
+	if (init(env))
+		run(env);
 	return (0);
 }
