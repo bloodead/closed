@@ -12,5 +12,6 @@ typedef struct	s_env
 int	init(t_env* env);
 char*   id_getline(int fd);
 int	id_atoi(char* str);
+int     count_num(char* str, int* pos);
 
 #endif
