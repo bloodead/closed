@@ -2,10 +2,11 @@ NAME	=	id_cp
 SRCS	=	main.c		\
 		id_getline.c	\
 		id_atoi.c	\
-		init.c
+		init.c		\
+		tools_init.c
 
 OBJS	=	$(SRCS:.c=.o)
-CFLAGS	=	-Wall -W -Werror
+CFLAGS	=	-Wall -W -Werror -g
 LDFLAGS	=
 
 all:	$(NAME)

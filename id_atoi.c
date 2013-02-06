@@ -5,15 +5,12 @@ int	len_number(char* str)
 	int	count;
 
 	count = 0;
-	printf("bug\n");
 	while (str[count] != '\0')
 	{
-		printf("lol\n");
 		if (str[count] < '0' || str[count] > '9')
 			return (0);
 		count = count + 1;
 	}
-	printf("count %d\n", count);
 	return (count);
 }
 

@@ -38,8 +38,6 @@ char*	id_getline(int fd)
 		if (inc_buf(&buf, &size, c))
 			return (buf);
 		ret = read(fd, &c, 1);
-		if (c == '0')
-			return(0);
 	}
 	return (buf);
 }

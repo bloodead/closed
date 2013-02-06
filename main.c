@@ -1,13 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "base.h"
 
 int	main(void)
 {
-	env_t*	env;
+	t_env*	env;
 
-	if (init(env))
-	{
-		
-	}
+	env = malloc(sizeof(t_env));
+	if (env == 0)
+		return (0);
+	init(env);
+	(void) env;
 	return (0);
 }

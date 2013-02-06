@@ -9,6 +9,7 @@ typedef struct	s_env
 	struct s_env*	next;
 }		t_env;
 
+int	init(t_env* env);
 char*   id_getline(int fd);
 int	id_atoi(char* str);
 
