@@ -47,11 +47,13 @@ int	init_coord(int num, t_env* env)
 	char*	str;
 	char**	ptr;
 
+	printf("num %d\n",num);
 	while (num != 0)
 	{
 		str = id_getline(0);
 		ptr = cut_num(str);
 		add_list_print(env, ptr);
+		env = env->next;
 		num = num - 1;
 	}
 	return (0);
@@ -62,20 +64,22 @@ int	init_list(int num, t_env* env)
 	t_env*	pos;
 	int	count;
 
-	count = 0;
+	count = 1;
 	pos = env;
-	while (count != num - 1)
+	while (count != num )
 	{
 		pos->i = count;
 		pos->next = malloc(sizeof(t_env));
 		if (pos->next == 0)
 			return (0);
+		pos = pos->next;
 		count = count + 1;
 	}
+	pos->i = count;
 	return (count + 1);
 }
 
-int	init(t_env* env)
+int	init(t_point* point)
 {
 	char*	str;
 	int	num;
@@ -92,8 +96,16 @@ int	init(t_env* env)
 		}
 		if (str[0] == '0')
 			return (1);
-		if (init_list(num, env) != 0)
-			init_coord(num, env);
+		point->env = malloc(sizeof(t_env));
+		if (init_list(num, point->env) != 0)
+		{
+			init_coord(num, point->env);
+			point->next = malloc(sizeof(t_point));
+			point = point->next;
+			point->next = 0;
+		}
+			printf("cordonnee pour ce point terminer\n");
+			
 	}
 	return (1);
 }

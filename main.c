@@ -4,12 +4,18 @@
 
 int	main(void)
 {
-	t_env*	env;
+	t_point*	point;
 
-	env = malloc(sizeof(t_env));
-	if (env == 0)
+	point = malloc(sizeof(t_point));
+	if (point == 0)
 		return (0);
-	if (init(env))
-		run(env);
+	if (init(point))
+	{
+		while (point->next != 0)
+		{
+			run(point->env);
+			point = point->next;
+		}
+	}
 	return (0);
 }
