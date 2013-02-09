@@ -45,6 +45,15 @@ void	calcul_point(t_env point1, t_env point2, double* resultf)
 	
 }
 
+
+void	check_infinity(double resultf)
+{
+	if (resultf < 10000)
+		printf("plus petite distance est %f\n",resultf);
+	else
+		printf("INFINITY\n");
+}
+
 void	run(t_env* env)
 {
 	int		count_point;
@@ -69,6 +78,6 @@ void	run(t_env* env)
 		point1 = point1 + 1;
 		point2 = point1 + 1;
 	}
-	printf("plus petite distance est %f\n",resultf);
+	check_infinity(resultf);
 	free(tab);
 }
