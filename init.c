@@ -30,24 +30,11 @@ int	str_len(char* str, char** ptr)
 	return (0);
 }
 
-char**	cut_num(char* str)
-{
-	char** ptr;
-
-	ptr = malloc(sizeof(char*) * 2);
-	if (str_len(str, ptr))
-		return (0);
-	cut_incre(ptr, str);
-	return (ptr);
-}
-
-
 int	valid_coord(char* str)
 {
 	int	pos;
 
 	pos = 0;
-
 	while (str[pos] != '\0')
 	{
 		if (str[pos] == ' ' && str[pos + 1] >= '0' && str[pos + 1] <= '9')
@@ -62,8 +49,8 @@ int	valid_coord(char* str)
 				}
 				pos = pos + 1;
 			}
-				return 1;
-		}		
+			return 1;
+		}
 		pos = pos + 1;
 	}
 	printf("Mauvaise entrer veuillez ecrire : x y\n");

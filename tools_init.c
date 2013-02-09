@@ -2,6 +2,17 @@
 #include <stdlib.h>
 #include "base.h"
 
+char**	cut_num(char* str)
+{
+	char**	ptr;
+
+	ptr = malloc(sizeof(char*) * 2);
+	if (str_len(str, ptr))
+		return (0);
+	cut_incre(ptr, str);
+	return (ptr);
+}
+
 void	cut_incre(char** ptr, char* str)
 {
 	int	count;

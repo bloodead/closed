@@ -15,6 +15,9 @@ typedef struct	s_env
 	struct s_env*	next;
 }		t_env;
 
+int	str_len(char* str, char** ptr);
+
+char**	cut_num(char* str);
 void	cut_incre(char** ptr, char* str);
 void	add_list_print(t_env* env, char** ptr);
 int	init(t_point* point);

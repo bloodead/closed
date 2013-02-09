@@ -49,7 +49,7 @@ void	calcul_point(t_env point1, t_env point2, double* resultf)
 void	check_infinity(double resultf)
 {
 	if (resultf < 10000)
-		printf("plus petite distance est %f\n",resultf);
+		printf("plus petite distance est %f\n", resultf);
 	else
 		printf("INFINITY\n");
 }
