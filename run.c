@@ -73,4 +73,5 @@ void	run(t_env* env)
 		point2 = point1 + 1;
 	}
 	printf("plus petite distance est %f\n",resultf);
+		free(tab);
 }
