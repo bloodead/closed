@@ -39,7 +39,6 @@ char**	cut_num(char* str)
 		return (0);
 	cut_incre(ptr, str);
 	return (ptr);
-	
 }
 
 int	init_coord(int num, t_env* env)
@@ -47,7 +46,6 @@ int	init_coord(int num, t_env* env)
 	char*	str;
 	char**	ptr;
 
-	printf("num %d\n",num);
 	while (num != 0)
 	{
 		str = id_getline(0);
@@ -104,8 +102,7 @@ int	init(t_point* point)
 			point = point->next;
 			point->next = 0;
 		}
-			printf("cordonnee pour ce point terminer\n");
-			
+		printf("cordonnee pour ce point terminer\n");
 	}
 	return (1);
 }

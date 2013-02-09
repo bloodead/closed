@@ -16,13 +16,13 @@ void	cut_incre(char** ptr, char* str)
 		while (str[count] != ' ')
 		{
 			if (str[count] == '\0')
-				break; 
+				break;
 			ptr[boucle][count2] = str[count];
 			count = count + 1;
 			count2 = count2 + 1;
 		}
 		if (str[count] == '\0')
-			break; 
+			break;
 		count = count + 1;
 		boucle = boucle + 1;
 	}

@@ -18,13 +18,9 @@ void	free_all(t_point* head)
 		tmp_p = head->next;
 		free(head);
 		head = tmp_p;
-		printf("DEBUG\n");
-		
 	}
 	free(head);
-
 }
-
 
 int	main(void)
 {

@@ -18,9 +18,9 @@ typedef struct	s_env
 void	cut_incre(char** ptr, char* str);
 void	add_list_print(t_env* env, char** ptr);
 int	init(t_point* point);
-char*   id_getline(int fd);
+char*	id_getline(int fd);
 int	id_atoi(char* str);
-int     count_num(char* str, int* pos);
-void    run(t_env* env);
+int	count_num(char* str, int* pos);
+void	run(t_env* env);
 
 #endif
