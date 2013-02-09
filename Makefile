@@ -7,7 +7,7 @@ SRCS	=	main.c		\
 		run.c
 
 OBJS	=	$(SRCS:.c=.o)
-CFLAGS	=	-Wall -W -Werror
+CFLAGS	=	-Wall -W -Werror -g
 LDFLAGS	=	-lm
 
 all:	$(NAME)

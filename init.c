@@ -41,14 +41,50 @@ char**	cut_num(char* str)
 	return (ptr);
 }
 
+
+int	valid_coord(char* str)
+{
+	int	pos;
+
+	pos = 0;
+
+	while (str[pos] != '\0')
+	{
+		if (str[pos] == ' ' && str[pos + 1] >= '0' && str[pos + 1] <= '9')
+		{
+			pos = pos + 1;
+			while (str[pos] != '\0')
+			{
+				if (str[pos] < '0' || str[pos] > '9')
+				{
+					printf("Mauvaise entrer veuillez ecrire : x y\n");
+					return 0;
+				}
+				pos = pos + 1;
+			}
+				return 1;
+		}		
+		pos = pos + 1;
+	}
+	printf("Mauvaise entrer veuillez ecrire : x y\n");
+	return 0;
+}
+
 int	init_coord(int num, t_env* env)
 {
 	char*	str;
 	char**	ptr;
+	int	status;
 
+	status = 0;
 	while (num != 0)
 	{
-		str = id_getline(0);
+		while (status != 1)
+		{
+			str = id_getline(0);
+			status = valid_coord(str);
+		}
+		status = 0;
 		ptr = cut_num(str);
 		add_list_print(env, ptr);
 		env = env->next;
